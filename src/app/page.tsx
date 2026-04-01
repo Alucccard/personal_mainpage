@@ -1,11 +1,4 @@
-import {
-  Header,
-  Banner,
-  Intro,
-  Portfolio,
-  Blog,
-  Footer,
-} from '@/components';
+import { Header, Banner, Intro, Portfolio, Blog, Footer } from "@/components";
 
 export default function Home() {
   return (
@@ -13,8 +6,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Banner
-          title="Hello, this is Byron Zhang"
-          subtitle="A page to showcase my portfolio"
+          title="Hello,here is Byron Zhang"
+          subtitle="This is a page to showcase my portfolio"
         />
         <Intro />
         <Portfolio />
