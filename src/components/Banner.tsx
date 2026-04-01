@@ -1,4 +1,5 @@
 "use client";
+import { Opacity } from "@mui/icons-material";
 import React from "react";
 import { useState } from "react";
 
@@ -17,9 +18,13 @@ export const Banner: React.FC<BannerProps> = ({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
   ) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
+    const rect = event.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
   };
 
   return (
@@ -27,17 +32,30 @@ export const Banner: React.FC<BannerProps> = ({
       id="banner"
       className="w-full py-19 px-6 text-center text-white relative overflow-hidden "
       onMouseMove={handleMouseMove}
+      onMouseLeave={() => setMousePosition({ x: 9999, y: 9999 })}
     >
-      {/* Background image layer with opacity */}
+      {/* Background image layer with spotlight effect */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${backgroundUrl || "/images/grid-pattern.png"})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.5,
+          opacity: 0.1,
         }}
       />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${backgroundUrl || "/images/grid-pattern.png"})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.1,
+          WebkitMaskImage: `radial-gradient(circle 150px at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
+          maskImage: `radial-gradient(circle 150px at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
+        }}
+      />
+
       {/* Content layer */}
       <div className="relative z-10 max-w-[700px] mx-auto">
         <div className="bg-black/80 rounded-lg p-8 md:p-12 mb-8 mt-8">
@@ -49,7 +67,6 @@ export const Banner: React.FC<BannerProps> = ({
             }}
           >
             {subtitle}
-            {mousePosition.x}, {mousePosition.y}
           </p>
         </div>
 
