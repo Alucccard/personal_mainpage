@@ -44,11 +44,11 @@ export const Intro: React.FC<IntroProps> = ({
             />
           ))}
           <div
-            className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-[100%] w-[1px] bg-gray-200"
+            className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-[100%] w-[2px] bg-gray-200"
             style={{ boxShadow: "-1px 0px 10px 1px rgba(0, 0, 0, 0.1)" }}
           ></div>
           <div
-            className="hidden md:block absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 h-[100%] w-[1px] bg-gray-200"
+            className="hidden md:block absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 h-[100%] w-[2px] bg-gray-200"
             style={{ boxShadow: "1px 0px 10px 1px rgba(0, 0, 0, 0.1)" }}
           ></div>
         </div>

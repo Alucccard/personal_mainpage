@@ -15,7 +15,7 @@ export const IntroCard: React.FC<IntroCardProps> = ({
   title,
   description,
   position = "middle",
-  width = "w-80",
+  width = "w-full",
   height = "min-h-80",
 }) => {
   const positionStyles = {
