@@ -15,24 +15,27 @@ export const Intro: React.FC<IntroProps> = ({
   items = [
     {
       icon: "/images/skill1.png",
-      title: "响应式设计",
-      description: "现代化、响应式的网页设计，在所有设备上完美呈现。",
+      title: "React / Next.js Front-end",
+      description:
+        "Focus on high-performance, scalable modern front-end architecture.",
     },
     {
       icon: "/images/skill2.png",
-      title: "性能优化",
-      description: "优化的代码和加载速度，提供卓越的用户体验。",
+      title: "Web3 DApp Development",
+      description:
+        "Proficient in wallet connection, on-chain interaction and contract invocation.",
     },
     {
       icon: "/images/skill3.png",
-      title: "创意开发",
-      description: "将创意想法转化为功能完整的应用程序和网站。",
+      title: "Solidity Smart Contracts",
+      description:
+        "Comprehensive skills in contract writing, testing, and security awareness.",
     },
   ],
 }) => {
   return (
     <section id="intro" className="w-full py-12 bg-white">
-      <div className="max-w-6xl mx-auto px-10">
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 relative">
           {items.map((item, index) => (
             <IntroCard
