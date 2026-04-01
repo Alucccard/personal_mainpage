@@ -13,8 +13,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Banner
-          title="欢迎来到我的作品集"
-          subtitle="展现设计与开发的完美融合"
+          title="Hello, this is Byron Zhang"
+          subtitle="A page to showcase my portfolio"
         />
         <Intro />
         <Portfolio />
