@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# md files with uppercase names (e.g., COMPONENTS.md, README.md)
+/[A-Z]*.md
+
+/html5up-dopetrope
