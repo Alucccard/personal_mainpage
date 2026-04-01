@@ -13,6 +13,7 @@ export const Banner: React.FC<BannerProps> = ({
   subtitle = "",
   backgroundUrl,
 }) => {
+  // State to track mouse position for interactive effects
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (
@@ -24,16 +25,20 @@ export const Banner: React.FC<BannerProps> = ({
   return (
     <section
       id="banner"
-      className="w-full py-19 px-6 text-center text-white relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${backgroundUrl || "/images/grid-pattern.png"})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="w-full py-19 px-6 text-center text-white relative overflow-hidden "
       onMouseMove={handleMouseMove}
     >
-      {/* Black overlay for readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Background image layer with opacity */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${backgroundUrl || "/images/grid-pattern.png"})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.5,
+        }}
+      />
+      {/* Content layer */}
       <div className="relative z-10 max-w-[700px] mx-auto">
         <div className="bg-black/80 rounded-lg p-8 md:p-12 mb-8 mt-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>

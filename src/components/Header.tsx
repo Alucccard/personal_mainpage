@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'About', href: '#about' },
+    { label: "Home", href: "#home" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Blog", href: "#blog" },
+    { label: "About", href: "#about" },
   ];
 
   return (
