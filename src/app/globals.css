@@ -11,6 +11,10 @@
   /* color for buttons */
   --color-custom-primary: #87a94c;
   --color-custom-accent: #302d2e;
+  --color-custom-primary-hover: #98bc58;
+  --color-custom-accent-hover: #534d50;
+  /* color for title words */
+  --color-title: #394152;
   /* color for description words */
   --color-description: #80a27e;
 

@@ -43,7 +43,7 @@ export const IntroCard: React.FC<IntroCardProps> = ({
           )}
         </div>
       )}
-      <h3 className="text-xl font-bold text-gray-700 mb-3 py-2">{title}</h3>
+      <h3 className="text-xl font-bold text-title mb-3 py-2">{title}</h3>
       <p className=" leading-relaxed text-description">{description}</p>
     </div>
   );

@@ -43,19 +43,19 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
 
       {/* Content */}
       <div className="p-8">
-        <h3 className="text-lg font-bold text-gray-700 mb-6 mt-1">{title}</h3>
-        <p className="text-sm leading-relaxed mb-8 text-description">
+        <h3 className="text-lg font-bold text-title mb-6 mt-1">{title}</h3>
+        <p className="text-sm leading-relaxed mb-8 h-20 text-description">
           {description}
         </p>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 mb-2">
           <Button
             href={link}
             variant="secondary"
             size="large"
-            className="text-xs"
+            className="text-xs "
           >
-            了解更多
+            Find more
           </Button>
         </div>
       </div>

@@ -67,7 +67,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({
         <header className="mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="flex-1 h-[0.5px] bg-gray-300"></div>
-            <h2 className="text-3xl md:text-1xl font-bold text-gray-700 whitespace-nowrap mx-5">
+            <h2 className="text-3xl md:text-1xl font-bold text-title whitespace-nowrap mx-5">
               {title}
             </h2>
             <div className="flex-1 h-[0.5px] bg-gray-300"></div>

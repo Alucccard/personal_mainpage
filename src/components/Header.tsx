@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                  className="text-title hover:text-blue-600 transition-colors font-medium"
                 >
                   {item.label}
                 </a>
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded transition-colors"
+                    className="block px-4 py-2 text-title hover:bg-gray-100 hover:text-blue-600 rounded transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
