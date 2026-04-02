@@ -1,5 +1,7 @@
-import React from 'react';
-import { Button } from './Button';
+"use client";
+import React, { useState } from "react";
+import { Button } from "./Button";
+import Image from "next/image";
 
 interface PortfolioCardProps {
   id: string;
@@ -13,27 +15,36 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   title,
   description,
   imageUrl,
-  link = '#',
+  link = "#",
 }) => {
+  const [isLoading, setIsLoading] = useState(!!imageUrl);
+
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 m-4 mt-0">
       {/* Image */}
-      {imageUrl && (
-        <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
-          <img
+      <div className="w-full h-64 bg-gray-200 overflow-hidden relative ">
+        {/* Skeleton Loader */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-linear-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse" />
+        )}
+        {/* Image */}
+        {imageUrl && (
+          <Image
             src={imageUrl}
             alt={title}
+            width={510}
+            height={355}
+            fill
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            onLoadingComplete={() => setIsLoading(false)}
           />
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-lg font-bold text-gray-900 mb-2">
-          {title}
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+      <div className="p-8">
+        <h3 className="text-lg font-bold text-gray-700 mb-6 mt-1">{title}</h3>
+        <p className="text-sm leading-relaxed mb-8 text-description">
           {description}
         </p>
 
@@ -41,7 +52,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
           <Button
             href={link}
             variant="secondary"
-            size="small"
+            size="large"
             className="text-xs"
           >
             了解更多

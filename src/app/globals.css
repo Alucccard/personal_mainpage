@@ -8,6 +8,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* color for buttons */
+  --color-custom-primary: #87a94c;
+  --color-custom-accent: #302d2e;
+  /* color for description words */
+  --color-description: #80a27e;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
