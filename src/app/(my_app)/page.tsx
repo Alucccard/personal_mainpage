@@ -1,4 +1,11 @@
-import { Header, Banner, Intro, Portfolio, Blog, Footer } from "@/components";
+import {
+  Header,
+  Banner,
+  Intro,
+  Portfolio,
+  Blog,
+  Footer,
+} from "@/app/(my_app)/components";
 
 export default function Home() {
   return (
