@@ -6,10 +6,10 @@ export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "#banner" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Blog", href: "#blog" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "#footer" },
   ];
 
   return (

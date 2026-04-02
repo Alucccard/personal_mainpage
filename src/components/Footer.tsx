@@ -1,38 +1,38 @@
-import React from 'react';
+import React from "react";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
     {
-      title: '快速链接',
+      title: "快速链接",
       links: [
-        { label: '主页', href: '#' },
-        { label: '作品集', href: '#portfolio' },
-        { label: '博客', href: '#blog' },
-        { label: '关于我', href: '#about' },
+        { label: "主页", href: "#" },
+        { label: "作品集", href: "#portfolio" },
+        { label: "博客", href: "#blog" },
+        { label: "关于我", href: "#about" },
       ],
     },
     {
-      title: '资源',
+      title: "资源",
       links: [
-        { label: '技术文档', href: '#' },
-        { label: '源代码', href: '#' },
-        { label: '教程', href: '#' },
-        { label: '工具', href: '#' },
+        { label: "技术文档", href: "#" },
+        { label: "源代码", href: "#" },
+        { label: "教程", href: "#" },
+        { label: "工具", href: "#" },
       ],
     },
   ];
 
   const socialLinks = [
-    { icon: 'f', label: 'Facebook', href: '#' },
-    { icon: 't', label: 'Twitter', href: '#' },
-    { icon: 'g', label: 'GitHub', href: '#' },
-    { icon: 'l', label: 'LinkedIn', href: '#' },
+    { icon: "f", label: "Facebook", href: "#" },
+    { icon: "t", label: "Twitter", href: "#" },
+    { icon: "g", label: "GitHub", href: "#" },
+    { icon: "l", label: "LinkedIn", href: "#" },
   ];
 
   return (
-    <footer className="w-full bg-gray-900 text-gray-100">
+    <footer id="footer" className="w-full bg-gray-900 text-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -71,13 +71,19 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li className="text-gray-400">
                 <span className="font-semibold">邮箱：</span>
-                <a href="mailto:hello@example.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:hello@example.com"
+                  className="hover:text-white transition-colors"
+                >
                   hello@example.com
                 </a>
               </li>
               <li className="text-gray-400">
                 <span className="font-semibold">电话：</span>
-                <a href="tel:+86-10-1234-5678" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+86-10-1234-5678"
+                  className="hover:text-white transition-colors"
+                >
                   +86 10-1234-5678
                 </a>
               </li>
@@ -125,7 +131,7 @@ export const Footer: React.FC = () => {
             </a>
           </p>
           <p className="mt-4">
-            使用 <span className="text-blue-400">Next.js</span> 和{' '}
+            使用 <span className="text-blue-400">Next.js</span> 和{" "}
             <span className="text-blue-400">React</span> 构建
           </p>
         </div>
