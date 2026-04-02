@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Byron Zhang's Portfolio",
-  description: "displaying design and development projects with a clean and modern aesthetic",
+  description:
+    "displaying design and development projects with a clean and modern aesthetic",
 };
 
 export default function RootLayout({
