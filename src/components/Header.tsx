@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center">
           <h1 className="text-2xl font-bold text-gray-900">
             <a href="/" className="hover:text-blue-600 transition-colors">
-              Portfolio
+              Home
             </a>
           </h1>
         </div>

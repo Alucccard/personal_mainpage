@@ -5,15 +5,25 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
       <main className="flex-1">
-        <Banner
-          title="Hello,here is Byron Zhang"
-          subtitle="This is a page to showcase my portfolio"
-        />
-        <Intro />
-        <Portfolio />
-        <Blog />
+        <div id="banner" className="scroll-mt-20">
+          <Banner
+            title="Hello,here is Byron Zhang"
+            subtitle="This is a page to showcase my portfolio"
+          />
+        </div>
+        <div id="intro" className="scroll-mt-20">
+          <Intro />
+        </div>
+        <div id="portfolio" className="scroll-mt-15">
+          <Portfolio />
+        </div>
+        <div id="blog" className="scroll-mt-30">
+          <Blog />
+        </div>
       </main>
-      <Footer />
+      <div id="footer" className="scroll-mt-20">
+        <Footer />
+      </div>
     </div>
   );
 }
