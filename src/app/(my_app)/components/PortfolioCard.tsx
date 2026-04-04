@@ -9,6 +9,7 @@ interface PortfolioCardProps {
   title: string;
   description: string;
   imageUrl?: string;
+  link?: string;
 }
 
 export const PortfolioCard: React.FC<PortfolioCardProps> = ({
@@ -16,6 +17,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   title,
   description,
   imageUrl,
+  link,
 }) => {
   const [isLoading, setIsLoading] = useState(!!imageUrl);
 

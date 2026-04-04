@@ -32,14 +32,17 @@ html {
     --foreground: #ededed;
   }
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 p {
   word-break: break-word;
   overflow-wrap: break-word;
+}
+code,
+pre {
+  font-family: var(--font-mono);
 }

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
 
 interface BannerProps {
   title?: string;
@@ -42,7 +43,7 @@ export const Banner: React.FC<BannerProps> = ({
       <style>{pulseAnimation}</style>
       <section
         id="banner"
-        className="w-full py-19 px-6 text-center text-white relative overflow-hidden "
+        className="w-full py-0 px-6 text-center text-white relative overflow-hidden "
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setMousePosition({ x: 9999, y: 9999 })}
       >
@@ -68,8 +69,16 @@ export const Banner: React.FC<BannerProps> = ({
         />
 
         {/* Content layer */}
+        <Image
+          src="/favicon.ico"
+          alt="Banner Image"
+          width={250}
+          height={100}
+          className="mx-auto mt-10 rounded-2xl relative z-11"
+          style={{ height: "auto" }}
+        />
         <div className="relative z-10 max-w-[700px] mx-auto">
-          <div className="bg-white/20 rounded-full p-8 md:p-12 mb-8 mt-8">
+          <div className="bg-white/20 rounded-full p-8 md:p-12 mb-1">
             <h2
               className="text-3xl md:text-5xl font-bold mb-4"
               style={{
