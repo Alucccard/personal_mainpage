@@ -23,6 +23,147 @@ export default buildConfig({
         },
       ],
     },
+
+    // ========== 新增：Portfolio Collection ==========
+    {
+      slug: "portfolios",
+      admin: {
+        useAsTitle: "title",
+      },
+      access: {
+        read: async () => true, // 公开读取
+      },
+      fields: [
+        {
+          name: "title",
+          type: "text",
+          required: true,
+        },
+        {
+          name: "description",
+          type: "textarea",
+          required: true,
+          label: "Short description shown on homepage",
+        },
+        {
+          name: "detail",
+          type: "richText",
+          label: "Detailed description shown on project page",
+        },
+        {
+          name: "technologies",
+          type: "array",
+          label: "Technologies used (e.g., React, Node.js)",
+          fields: [
+            {
+              name: "tech",
+              type: "text",
+              label: "Technology Name",
+              required: true,
+            },
+          ],
+        },
+        {
+          name: "imageUrl",
+          type: "text",
+          label: "Image URL",
+        },
+        {
+          name: "link",
+          type: "text",
+          label: "Project Link",
+        },
+        {
+          name: "order",
+          type: "number",
+          defaultValue: 0,
+          label: "Display Order",
+        },
+      ],
+    },
+    // ========== 新增：Blog Collection ==========
+    {
+      slug: "blogs",
+      admin: {
+        useAsTitle: "title",
+      },
+      access: {
+        read: async () => true, // 公开读取
+      },
+      fields: [
+        {
+          name: "title",
+          type: "text",
+          required: true,
+        },
+        {
+          name: "description",
+          type: "textarea",
+          required: true,
+        },
+        {
+          name: "date",
+          type: "date",
+          required: true,
+        },
+        {
+          name: "imageUrl",
+          type: "text",
+          label: "Image URL",
+        },
+        {
+          name: "link",
+          type: "text",
+          label: "Blog Link",
+        },
+        {
+          name: "commentCount",
+          type: "number",
+          defaultValue: 0,
+          label: "Comment Count",
+        },
+        {
+          name: "order",
+          type: "number",
+          defaultValue: 0,
+          label: "Display Order",
+        },
+      ],
+    },
+
+    // ========== 新增：Intro Skills Collection ==========
+    {
+      slug: "intro-skills",
+      admin: {
+        useAsTitle: "title",
+      },
+      access: {
+        read: async () => true, // 公开读取
+      },
+      fields: [
+        {
+          name: "icon",
+          type: "text",
+          label: "Icon URL (e.g., /images/skill1.png)",
+        },
+        {
+          name: "title",
+          type: "text",
+          required: true,
+        },
+        {
+          name: "description",
+          type: "textarea",
+          required: true,
+        },
+        {
+          name: "order",
+          type: "number",
+          defaultValue: 0,
+          label: "Display Order",
+        },
+      ],
+    },
   ],
 
   // Your Payload secret - should be a complex and secure string, unguessable

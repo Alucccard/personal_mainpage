@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./Button";
 import Image from "next/image";
@@ -8,14 +9,13 @@ interface PortfolioCardProps {
   title: string;
   description: string;
   imageUrl?: string;
-  link?: string;
 }
 
 export const PortfolioCard: React.FC<PortfolioCardProps> = ({
+  id,
   title,
   description,
   imageUrl,
-  link = "#",
 }) => {
   const [isLoading, setIsLoading] = useState(!!imageUrl);
 
@@ -50,10 +50,10 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
 
         <div className="flex gap-2 mb-2">
           <Button
-            href={link}
+            href={`/portfolio/${id}`}
             variant="secondary"
             size="large"
-            className="text-xs "
+            className="text-xs"
           >
             Find more
           </Button>

@@ -1,0 +1,120 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getPortfolio } from "@/app/lib/payload";
+
+interface PortfolioDetailPageProps {
+  params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: PortfolioDetailPageProps) {
+  const { id } = await params;
+  const portfolio = await getPortfolio(id);
+
+  return {
+    title: portfolio?.title || "Portfolio",
+    description: portfolio?.description || "Portfolio details",
+  };
+}
+
+export default async function PortfolioDetailPage({
+  params,
+}: PortfolioDetailPageProps) {
+  const { id } = await params;
+  const portfolio = await getPortfolio(id);
+
+  if (!portfolio) {
+    notFound();
+  }
+
+  const paragraphs =
+    portfolio.detail?.root?.children
+      ?.filter((n) => n.type === "paragraph")
+      .map((p) => (p.children ?? []).map((c) => c.text ?? "").join(""))
+      .filter((t) => t.trim().length > 0) ?? [];
+
+  return (
+    <div className="flex min-h-screen flex-col bg-white">
+      <main className="flex-1">
+        {portfolio.imageUrl && (
+          <div className="relative h-96 w-full overflow-hidden bg-gray-200">
+            <Image
+              src={portfolio.imageUrl}
+              alt={portfolio.title}
+              fill
+              className="h-full w-full object-cover"
+            />
+          </div>
+        )}
+
+        <section className="w-full bg-white px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <header className="mb-12">
+              <h1 className="mb-4 text-4xl font-bold text-title">
+                {portfolio.title}
+              </h1>
+              <p className="mb-8 text-lg text-description">
+                {portfolio.description}
+              </p>
+
+              {portfolio.technologies?.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="mb-3 text-lg font-bold text-title">
+                    Technologies
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {portfolio.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-800"
+                      >
+                        {tech.tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {portfolio.link && portfolio.link !== "#" && (
+                <a
+                  href={portfolio.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-lg bg-custom-primary px-6 py-3 text-white transition hover:bg-custom-primary-hover"
+                >
+                  Visit Project
+                </a>
+              )}
+            </header>
+
+            <div className="my-12 h-[0.5px] bg-gray-300" />
+
+            <article className="max-w-none prose prose-lg">
+              {paragraphs.length > 0 ? (
+                paragraphs.map((text, i) => (
+                  <p
+                    key={i}
+                    className="mb-4 text-gray-700 leading-relaxed wrap-break-words"
+                  >
+                    {text}
+                  </p>
+                ))
+              ) : (
+                <p className="text-gray-500">No detailed content available.</p>
+              )}
+            </article>
+
+            <div className="mt-16 border-t border-gray-300 pt-8">
+              <Link
+                href="/#portfolio"
+                className="inline-flex items-center text-blue-500 transition hover:text-blue-700"
+              >
+                Back to Portfolio
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

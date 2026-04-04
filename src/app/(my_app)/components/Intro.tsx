@@ -1,7 +1,8 @@
 import React from "react";
 import { IntroCard } from "./IntroCard";
+import { getIntroSkills } from "@/app/lib/payload";
 
-interface IntroItem {
+/* interface IntroItem {
   icon?: React.ReactNode;
   title: string;
   description: string;
@@ -10,9 +11,10 @@ interface IntroItem {
 interface IntroProps {
   items?: IntroItem[];
 }
-
-export const Intro: React.FC<IntroProps> = ({
-  items = [
+ */
+export const Intro: React.FC<{ title?: string }> = async (
+  {
+    /*   items = [
     {
       icon: "/images/skill1.png",
       title: "React / Next.js Front-end",
@@ -31,8 +33,10 @@ export const Intro: React.FC<IntroProps> = ({
       description:
         "Comprehensive skills in contract writing, testing, and security awareness.",
     },
-  ],
-}) => {
+  ],*/
+  },
+) => {
+  const items = await getIntroSkills();
   return (
     <section
       id="intro"
@@ -52,6 +56,12 @@ export const Intro: React.FC<IntroProps> = ({
           <div className="hidden md:block absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 h-full w-[0.5px] bg-gray-200"></div>
           <div className="hidden md:block absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 h-full w-[0.5px] bg-gray-200"></div>
         </div>
+        {/* 如果没有数据，显示提示 */}
+        {items.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No intro skills available yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );

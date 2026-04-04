@@ -1,7 +1,8 @@
 import React from "react";
 import { BlogCard } from "./BlogCard";
+import { getBlogs } from "@/app/lib/payload";
 
-interface BlogItem {
+/* interface BlogItem {
   id: string;
   title: string;
   description: string;
@@ -15,9 +16,9 @@ interface BlogProps {
   items?: BlogItem[];
   title?: string;
 }
-
-export const Blog: React.FC<BlogProps> = ({
-  items = [
+ */
+export const Blog: React.FC<{ title?: string }> = async ({
+  /*   items = [
     {
       id: "1",
       title: "React 18 新特性解析",
@@ -58,9 +59,10 @@ export const Blog: React.FC<BlogProps> = ({
       link: "#",
       commentCount: 10,
     },
-  ],
-  title = "最新博客",
+  ], */
+  title = "Blog",
 }) => {
+  const items = await getBlogs();
   return (
     <section id="blog" className="w-full px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -90,6 +92,12 @@ export const Blog: React.FC<BlogProps> = ({
             />
           ))}
         </div>
+        {/* 如果没有数据，显示提示 */}
+        {items.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No blogs available yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );

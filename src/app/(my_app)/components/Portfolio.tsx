@@ -1,7 +1,8 @@
 import React from "react";
 import { PortfolioCard } from "./PortfolioCard";
+import { getPortfolios } from "@/app/lib/payload";
 
-interface PortfolioItem {
+/* interface PortfolioItem {
   id: string;
   title: string;
   description: string;
@@ -13,9 +14,9 @@ interface PortfolioProps {
   items?: PortfolioItem[];
   title?: string;
 }
-
-export const Portfolio: React.FC<PortfolioProps> = ({
-  items = [
+ */
+export const Portfolio: React.FC<{ title?: string }> = async ({
+  /*   items = [
     {
       id: "1",
       title: "项目一：电商平台",
@@ -59,8 +60,9 @@ export const Portfolio: React.FC<PortfolioProps> = ({
       link: "#",
     },
   ],
-  title = "我的作品集",
+ */ title = "My Portfolio",
 }) => {
+  const items = await getPortfolios();
   return (
     <section id="portfolio" className="w-full py-16 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -87,6 +89,12 @@ export const Portfolio: React.FC<PortfolioProps> = ({
             />
           ))}
         </div>
+        {/* 如果没有数据，显示提示 */}
+        {items.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No portfolios available yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );
