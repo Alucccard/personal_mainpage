@@ -52,7 +52,10 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="footer" className="w-full bg-gray-900 text-gray-100">
+    <footer
+      id="footer"
+      className="w-full bg-[var(--color-footer-background)] text-gray-100"
+    >
       <div className="max-w-6xl mx-auto px-10 py-16">
         {/* Main Footer Content */}
         <div className="flex flex-col sm:flex-row justify-start gap-8 mb-12">
@@ -111,7 +114,7 @@ export const Footer: React.FC = () => {
                 </svg>
                 <a
                   href="mailto:ai454293996@outlook.com"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-green-300 transition-colors"
                 >
                   ai454293996@outlook.com
                 </a>
@@ -133,7 +136,7 @@ export const Footer: React.FC = () => {
                 </svg>
                 <a
                   href="tel:+8618627293137"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-green-300 transition-colors"
                 >
                   +86 18627293137
                 </a>
@@ -179,8 +182,8 @@ export const Footer: React.FC = () => {
             </a> */}
           </p>
           <p className="mt-4">
-            Built with <span className="text-blue-400">Next.js</span> and{" "}
-            <span className="text-blue-400">React</span>
+            Built with <span className="text-green-300">Next.js</span> and{" "}
+            <span className="text-green-300">React</span>
           </p>
         </div>
       </div>
