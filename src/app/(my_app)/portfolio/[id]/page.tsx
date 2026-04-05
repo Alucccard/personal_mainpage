@@ -53,7 +53,7 @@ export default async function PortfolioDetailPage({
               <h1 className="mb-4 text-4xl font-bold text-title">
                 {portfolio.title}
               </h1>
-              <p className="mb-8 text-1xl text-description">
+              <p className="mb-8 text-1xl text-description indent-5">
                 {portfolio.description}
               </p>
 
