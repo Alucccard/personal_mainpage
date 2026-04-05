@@ -89,7 +89,7 @@ export const Banner: React.FC<BannerProps> = ({
             </h2>
 
             <p
-              className="text-lg md:text-3xl opacity-95"
+              className="text-lg md:text-2xl opacity-95"
               style={{
                 color: "#287543",
               }}

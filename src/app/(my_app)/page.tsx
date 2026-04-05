@@ -15,7 +15,7 @@ export default function Home() {
         <div id="banner" className="scroll-mt-20">
           <Banner
             title="Hello,here is Byron Zhang"
-            subtitle="This is a page to showcase my portfolio"
+            subtitle="This is a simple page to showcase my portfolio"
           />
         </div>
         <div id="intro" className="scroll-mt-20">
