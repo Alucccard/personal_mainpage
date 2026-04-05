@@ -35,16 +35,6 @@ export default async function PortfolioDetailPage({
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/MZbwu3-uz3Y?si=jKjh6QMwn8dQfSff"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
       <main className="flex-1">
         {portfolio.imageUrl && (
           <div className="relative h-96 mx-auto max-w-4xl overflow-hidden bg-gray-200">
