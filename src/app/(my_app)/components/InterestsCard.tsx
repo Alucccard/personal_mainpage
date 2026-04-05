@@ -4,25 +4,19 @@ import { useState } from "react";
 import { Button } from "./Button";
 import Image from "next/image";
 
-interface BlogCardProps {
+interface InterestsCardProps {
   id: string;
   title: string;
   description: string;
-  date: string;
   imageUrl?: string;
   videoUrl?: string;
-  link?: string;
-  commentCount?: number;
 }
 
-export const InterestsCard: React.FC<BlogCardProps> = ({
+export const InterestsCard: React.FC<InterestsCardProps> = ({
   title,
   description,
-  date,
   imageUrl,
   videoUrl,
-  link = "#",
-  commentCount = 0,
 }) => {
   const [isLoading, setIsLoading] = useState(!!imageUrl);
   console.log("BlogCard videoUrl:", videoUrl);

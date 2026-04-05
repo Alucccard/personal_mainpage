@@ -27,15 +27,12 @@ export interface Portfolio {
   order: number;
 }
 
-export interface Blog {
+export interface Interest {
   id: string;
   title: string;
   description: string;
-  date: string;
   imageUrl?: string;
   videoUrl?: string;
-  link?: string;
-  commentCount?: number;
   order: number;
 }
 
@@ -97,23 +94,25 @@ export async function getPortfolio(id: string): Promise<Portfolio | null> {
 }
 
 /**
- * 获取所有 Blog 数据
+ * 获取所有 Interests 数据
  */
-export async function getBlogs(): Promise<Blog[]> {
+export async function getInterests(): Promise<Interest[]> {
   try {
-    const response = await fetch(`${BASE_URL}/blogs?limit=999`, {
-      cache: "force-cache",
-      next: { revalidate: 600 }, // 10分钟重新验证一次
+    const response = await fetch(`${BASE_URL}/interests?limit=999`, {
+      // cache: "force-cache",
+      // next: { revalidate: 600 }, // 10分钟重新验证一次
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch blogs: ${response.status}`);
+      throw new Error(`Failed to fetch interests: ${response.status}`);
     }
 
     const data = await response.json();
-    return (data.docs || []).sort((a: Blog, b: Blog) => a.order - b.order);
+    return (data.docs || []).sort(
+      (a: Interest, b: Interest) => a.order - b.order,
+    );
   } catch (error) {
-    console.error("Error fetching blogs:", error);
+    console.error("Error fetching interests:", error);
     return [];
   }
 }

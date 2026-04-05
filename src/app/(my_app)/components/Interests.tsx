@@ -1,6 +1,6 @@
 import React from "react";
 import { InterestsCard } from "./InterestsCard";
-import { getBlogs } from "@/app/lib/payload";
+import { getInterests } from "@/app/lib/payload";
 
 /* interface BlogItem {
   id: string;
@@ -62,7 +62,7 @@ export const Interests: React.FC<{ title?: string }> = async ({
   ], */
   title = "Hobbies and Interests",
 }) => {
-  const items = await getBlogs();
+  const items = await getInterests();
   return (
     <section id="interests" className="w-full px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -85,11 +85,8 @@ export const Interests: React.FC<{ title?: string }> = async ({
               id={item.id}
               title={item.title}
               description={item.description}
-              date={item.date}
               imageUrl={item.imageUrl}
               videoUrl={item.videoUrl}
-              link={item.link}
-              commentCount={item.commentCount}
             />
           ))}
         </div>

@@ -81,9 +81,9 @@ export default buildConfig({
         },
       ],
     },
-    // ========== 新增：Blog Collection ==========
+    // ========== 新增：Interests Collection ==========
     {
-      slug: "blogs",
+      slug: "interests",
       admin: {
         useAsTitle: "title",
       },
@@ -102,11 +102,6 @@ export default buildConfig({
           required: true,
         },
         {
-          name: "date",
-          type: "date",
-          required: true,
-        },
-        {
           name: "imageUrl",
           type: "text",
           label: "Image URL",
@@ -117,17 +112,6 @@ export default buildConfig({
           label: "Video URL",
         },
         {
-          name: "link",
-          type: "text",
-          label: "Blog Link",
-        },
-        {
-          name: "commentCount",
-          type: "number",
-          defaultValue: 0,
-          label: "Comment Count",
-        },
-        {
           name: "order",
           type: "number",
           defaultValue: 0,
@@ -135,8 +119,6 @@ export default buildConfig({
         },
       ],
     },
-
-    // ========== 新增：Intro Skills Collection ==========
     {
       slug: "intro-skills",
       admin: {
