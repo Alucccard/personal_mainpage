@@ -70,7 +70,7 @@ export const Banner: React.FC<BannerProps> = ({
 
         {/* Content layer */}
         <Image
-          src="/favicon.ico"
+          src="/images/portrait.png"
           alt="Banner Image"
           width={250}
           height={100}

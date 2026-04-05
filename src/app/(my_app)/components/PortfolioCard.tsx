@@ -22,7 +22,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
   const [isLoading, setIsLoading] = useState(!!imageUrl);
 
   return (
-    <div className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 m-4 mt-0">
+    <div className="bg-white shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 m-4 mt-0">
       {/* Image */}
       <div className="w-full h-64 bg-gray-200 overflow-hidden relative ">
         {/* Skeleton Loader */}

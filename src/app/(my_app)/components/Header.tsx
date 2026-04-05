@@ -16,13 +16,19 @@ export const Header: React.FC = () => {
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <img
+            src="/favicon.ico"
+            alt="Byron Zhang Logo"
+            width={40}
+            height={40}
+          />
           <h1 className="text-2xl font-bold text-gray-900">
             <a
               href="#banner"
               className="hover:text-green-600 transition-colors"
             >
-              Portfolio
+              Byron Zhang
             </a>
           </h1>
         </div>
