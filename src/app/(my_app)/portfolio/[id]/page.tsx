@@ -35,9 +35,19 @@ export default async function PortfolioDetailPage({
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/MZbwu3-uz3Y?si=jKjh6QMwn8dQfSff"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
       <main className="flex-1">
         {portfolio.imageUrl && (
-          <div className="relative h-96 w-full overflow-hidden bg-gray-200">
+          <div className="relative h-96 mx-auto max-w-4xl overflow-hidden bg-gray-200">
             <Image
               src={portfolio.imageUrl}
               alt={portfolio.title}
@@ -53,16 +63,16 @@ export default async function PortfolioDetailPage({
               <h1 className="mb-4 text-4xl font-bold text-title">
                 {portfolio.title}
               </h1>
-              <p className="mb-8 text-lg text-description">
+              <p className="mb-8 text-1xl text-description">
                 {portfolio.description}
               </p>
 
               {portfolio.technologies?.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="mb-3 text-lg font-bold text-title">
+                <div>
+                  <h3 className="mb-4 text-lg font-bold text-title">
                     Technologies
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-4">
                     {portfolio.technologies.map((tech, idx) => (
                       <span
                         key={idx}
@@ -73,17 +83,6 @@ export default async function PortfolioDetailPage({
                     ))}
                   </div>
                 </div>
-              )}
-
-              {portfolio.link && portfolio.link !== "#" && (
-                <a
-                  href={portfolio.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block rounded-lg bg-custom-primary px-6 py-3 text-white transition hover:bg-custom-primary-hover"
-                >
-                  Visit Project
-                </a>
               )}
             </header>
 
@@ -104,10 +103,20 @@ export default async function PortfolioDetailPage({
               )}
             </article>
 
-            <div className="mt-16 border-t border-gray-300 pt-8">
+            <div className="flex justify-between mt-12 border-t border-gray-300 pt-8">
+              {portfolio.link && portfolio.link !== "#" && (
+                <a
+                  href={portfolio.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-green-500 transition hover:text-green-700"
+                >
+                  Visit Project
+                </a>
+              )}
               <Link
                 href="/#portfolio"
-                className="inline-flex items-center text-green-500 transition hover:text-green-700"
+                className="inline-flex ml-auto text-green-500 transition hover:text-green-700"
               >
                 Back to Portfolio
               </Link>

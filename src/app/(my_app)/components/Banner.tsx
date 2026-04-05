@@ -73,9 +73,9 @@ export const Banner: React.FC<BannerProps> = ({
           src="/images/portrait.png"
           alt="Banner Image"
           width={250}
-          height={100}
-          className="mx-auto mt-10 rounded-2xl relative z-11"
-          style={{ height: "auto" }}
+          height={250}
+          className="mx-auto mt-10 rounded-2xl relative z-11 object-cover"
+          style={{ width: "auto", height: "auto" }}
         />
         <div className="relative z-10 max-w-[700px] mx-auto">
           <div className="bg-white/20 rounded-full p-8 md:p-12 mb-1">

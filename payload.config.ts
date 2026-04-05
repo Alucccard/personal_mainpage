@@ -112,6 +112,11 @@ export default buildConfig({
           label: "Image URL",
         },
         {
+          name: "videoUrl",
+          type: "text",
+          label: "Video URL",
+        },
+        {
           name: "link",
           type: "text",
           label: "Blog Link",

@@ -60,7 +60,7 @@ export const Blog: React.FC<{ title?: string }> = async ({
       commentCount: 10,
     },
   ], */
-  title = "Blog",
+  title = "Hobbies and Interests",
 }) => {
   const items = await getBlogs();
   return (
@@ -87,6 +87,7 @@ export const Blog: React.FC<{ title?: string }> = async ({
               description={item.description}
               date={item.date}
               imageUrl={item.imageUrl}
+              videoUrl={item.videoUrl}
               link={item.link}
               commentCount={item.commentCount}
             />

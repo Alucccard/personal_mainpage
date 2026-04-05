@@ -33,6 +33,7 @@ export interface Blog {
   description: string;
   date: string;
   imageUrl?: string;
+  videoUrl?: string;
   link?: string;
   commentCount?: number;
   order: number;

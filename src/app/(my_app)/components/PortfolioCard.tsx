@@ -34,11 +34,10 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
           <Image
             src={imageUrl}
             alt={title}
-            width={510}
-            height={355}
             fill
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            onLoadingComplete={() => setIsLoading(false)}
+            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+            className="object-cover hover:scale-105 transition-transform duration-300"
+            onLoad={() => setIsLoading(false)}
           />
         )}
       </div>
@@ -46,7 +45,7 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({
       {/* Content */}
       <div className="p-8">
         <h3 className="text-lg font-bold text-title mb-6 mt-1">{title}</h3>
-        <p className="text-sm leading-relaxed mb-8 h-20 text-description">
+        <p className="text-sm leading-relaxed mb-8  text-description line-clamp-5">
           {description}
         </p>
 
