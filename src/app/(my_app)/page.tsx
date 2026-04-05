@@ -3,7 +3,7 @@ import {
   Banner,
   Intro,
   Portfolio,
-  Blog,
+  Interests,
   Footer,
 } from "@/app/(my_app)/components";
 
@@ -24,8 +24,8 @@ export default function Home() {
         <div id="portfolio" className="scroll-mt-15">
           <Portfolio />
         </div>
-        <div id="blog" className="scroll-mt-30">
-          <Blog />
+        <div id="interests" className="scroll-mt-30">
+          <Interests />
         </div>
       </main>
       <div id="footer" className="scroll-mt-20">

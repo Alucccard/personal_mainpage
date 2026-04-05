@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogCard } from "./BlogCard";
+import { InterestsCard } from "./InterestsCard";
 import { getBlogs } from "@/app/lib/payload";
 
 /* interface BlogItem {
@@ -17,7 +17,7 @@ interface BlogProps {
   title?: string;
 }
  */
-export const Blog: React.FC<{ title?: string }> = async ({
+export const Interests: React.FC<{ title?: string }> = async ({
   /*   items = [
     {
       id: "1",
@@ -64,7 +64,7 @@ export const Blog: React.FC<{ title?: string }> = async ({
 }) => {
   const items = await getBlogs();
   return (
-    <section id="blog" className="w-full px-6 bg-gray-50">
+    <section id="interests" className="w-full px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <header className="mb-12">
@@ -80,7 +80,7 @@ export const Blog: React.FC<{ title?: string }> = async ({
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((item) => (
-            <BlogCard
+            <InterestsCard
               key={item.id}
               id={item.id}
               title={item.title}

@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
       links: [
         { label: "主页", href: "#" },
         { label: "作品集", href: "#portfolio" },
-        { label: "博客", href: "#blog" },
+        { label: "兴趣", href: "#interests" },
         { label: "关于我", href: "#about" },
       ],
     },

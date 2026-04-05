@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
+import { useCallback } from "react";
 
 interface BannerProps {
   title?: string;
@@ -17,15 +18,16 @@ export const Banner: React.FC<BannerProps> = ({
   // State to track mouse position for interactive effects
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
-  ) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    });
-  };
+  const handleMouseMove = useCallback(
+    (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      setMousePosition({
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      });
+    },
+    [],
+  );
 
   // CSS for spotlight pulse animation
   const pulseAnimation = `
@@ -69,14 +71,15 @@ export const Banner: React.FC<BannerProps> = ({
         />
 
         {/* Content layer */}
-        <Image
-          src="/images/portrait.png"
-          alt="Banner Image"
-          width={250}
-          height={250}
-          className="mx-auto mt-10 rounded-2xl relative z-11 object-cover"
-          style={{ width: "auto", height: "auto" }}
-        />
+        <div className="relative w-[250px] h-[250px] mx-auto mt-10">
+          <Image
+            src="/images/portrait.png"
+            alt="Banner Image"
+            fill
+            sizes="(max-width: 767px) 100vw, 50vw"
+            className="rounded-2xl object-cover"
+          />
+        </div>
         <div className="relative z-10 max-w-[700px] mx-auto">
           <div className="bg-white/20 rounded-full p-8 md:p-12 mb-1">
             <h2

@@ -15,7 +15,7 @@ interface BlogCardProps {
   commentCount?: number;
 }
 
-export const BlogCard: React.FC<BlogCardProps> = ({
+export const InterestsCard: React.FC<BlogCardProps> = ({
   title,
   description,
   date,
