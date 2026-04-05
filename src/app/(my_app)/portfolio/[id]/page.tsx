@@ -37,20 +37,20 @@ export default async function PortfolioDetailPage({
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
         {portfolio.imageUrl && (
-          <div className="relative h-96 mx-auto max-w-4xl overflow-hidden bg-gray-200">
+          <div className="relative h-48 md:h-96 mx-auto max-w-4xl overflow-hidden bg-gray-200">
             <Image
               src={portfolio.imageUrl}
               alt={portfolio.title}
               fill
-              className="h-full w-full object-cover"
+              className="h-96 w-full md:h-full object-cover"
             />
           </div>
         )}
 
-        <section className="w-full bg-white px-6 py-16">
+        <section className="w-full bg-white px-6 py-8 md:py-16">
           <div className="mx-auto max-w-4xl">
             <header className="mb-12">
-              <h1 className="mb-4 text-4xl font-bold text-title">
+              <h1 className="mb-4 text-2xl md:text-4xl font-bold text-title">
                 {portfolio.title}
               </h1>
               <p className="mb-8 text-1xl text-description indent-5">

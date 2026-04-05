@@ -19,7 +19,6 @@ export const InterestsCard: React.FC<InterestsCardProps> = ({
   videoUrl,
 }) => {
   const [isLoading, setIsLoading] = useState(!!imageUrl);
-  console.log("BlogCard videoUrl:", videoUrl);
   return (
     <div className="bg-white shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 m-4 mt-0">
       {/* Media: Image or Video */}
