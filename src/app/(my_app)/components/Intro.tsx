@@ -40,7 +40,7 @@ export const Intro: React.FC<{ title?: string }> = async (
   return (
     <section
       id="intro"
-      className="w-full py-12 bg-white border-b border-gray-200"
+      className="w-full md:py-12 bg-white border-b border-gray-200"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 relative">

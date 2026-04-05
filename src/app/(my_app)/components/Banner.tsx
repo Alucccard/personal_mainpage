@@ -71,7 +71,7 @@ export const Banner: React.FC<BannerProps> = ({
         />
 
         {/* Content layer */}
-        <div className="relative md:w-[250px] h-[250px] mx-auto mt-10">
+        <div className="relative h-[150px] md:w-[250px] md:h-[250px] mx-auto mt-10">
           <Image
             src="/images/portrait.png"
             alt="Banner Image"
