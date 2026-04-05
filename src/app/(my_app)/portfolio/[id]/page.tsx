@@ -66,7 +66,7 @@ export default async function PortfolioDetailPage({
                     {portfolio.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-800"
+                        className="bg-green-100 text-green-800 px-3 py-1 rounded text-sm"
                       >
                         {tech.tech}
                       </span>
@@ -107,7 +107,7 @@ export default async function PortfolioDetailPage({
             <div className="mt-16 border-t border-gray-300 pt-8">
               <Link
                 href="/#portfolio"
-                className="inline-flex items-center text-blue-500 transition hover:text-blue-700"
+                className="inline-flex items-center text-green-500 transition hover:text-green-700"
               >
                 Back to Portfolio
               </Link>
