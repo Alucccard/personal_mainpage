@@ -71,23 +71,27 @@ export const Header: React.FC = () => {
         </button>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <nav className="absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden">
-            <ul className="flex flex-col gap-2 p-4">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="block px-4 py-2 text-title hover:bg-gray-100 hover:text-green-600 rounded transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <nav
+          className={`
+          absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden
+          origin-top transition-all duration-300 ease-in-out
+          ${isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"}
+        `}
+        >
+          <ul className="flex flex-col gap-2 p-4">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="block px-4 py-2 text-title hover:bg-gray-100 hover:text-green-600 rounded transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
