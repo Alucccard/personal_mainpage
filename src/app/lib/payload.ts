@@ -52,8 +52,7 @@ export interface IntroSkill {
 export async function getPortfolios(): Promise<Portfolio[]> {
   try {
     const response = await fetch(`${BASE_URL}/portfolios?limit=999`, {
-      /*       cache: "force-cache", // Next.js 默认缓存，除非手动 revalidate
-      next: { revalidate: 600 }, // 10分钟重新验证一次 */
+      cache: "no-cache",
     });
 
     if (!response.ok) {
@@ -77,8 +76,7 @@ export async function getPortfolios(): Promise<Portfolio[]> {
 export async function getPortfolio(id: string): Promise<Portfolio | null> {
   try {
     const response = await fetch(`${BASE_URL}/portfolios/${id}`, {
-      /*       cache: "force-cache",
-      next: { revalidate: 600 }, */
+      cache: "no-cache",
     });
 
     if (!response.ok) {
@@ -99,8 +97,7 @@ export async function getPortfolio(id: string): Promise<Portfolio | null> {
 export async function getInterests(): Promise<Interest[]> {
   try {
     const response = await fetch(`${BASE_URL}/interests?limit=999`, {
-      // cache: "force-cache",
-      // next: { revalidate: 600 }, // 10分钟重新验证一次
+      cache: "no-cache",
     });
 
     if (!response.ok) {
@@ -123,8 +120,7 @@ export async function getInterests(): Promise<Interest[]> {
 export async function getIntroSkills(): Promise<IntroSkill[]> {
   try {
     const response = await fetch(`${BASE_URL}/intro-skills?limit=999`, {
-      cache: "force-cache",
-      next: { revalidate: 600 }, // 10分钟重新验证一次
+      cache: "no-cache",
     });
 
     if (!response.ok) {
