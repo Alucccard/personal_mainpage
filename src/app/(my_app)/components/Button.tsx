@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface ButtonProps {
   href?: string;
@@ -35,9 +36,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={buttonClasses}>
+      <Link href={href} className={buttonClasses}>
         {children}
-      </a>
+      </Link>
     );
   }
 
