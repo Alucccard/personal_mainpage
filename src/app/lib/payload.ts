@@ -1,8 +1,7 @@
 import { id } from "payload/i18n/id";
 
-const BASE_URL = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}/api`
-  : "http://localhost:3000/api";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_PAYLOAD_API || "http://localhost:3000/api";
 
 // ========== 类型定义 ==========
 type LexicalNode = {
