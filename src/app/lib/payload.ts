@@ -1,7 +1,24 @@
 import { id } from "payload/i18n/id";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API || "http://localhost:3000/api";
+const getPayloadApiUrl = () => {
+  // 优先用production URL
+  if (
+    process.env.VERCEL_ENV === "production" &&
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api`;
+  }
+
+  // 其次用当前URL（preview和development都适用）
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}/api`;
+  }
+
+  // 本地开发
+  return "http://localhost:3000/api";
+};
+
+const BASE_URL = getPayloadApiUrl();
 
 // ========== 类型定义 ==========
 type LexicalNode = {
