@@ -10,7 +10,6 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <div>test version</div>
       <Header />
       <main className="flex-1">
         <div id="banner" className="scroll-mt-20">
