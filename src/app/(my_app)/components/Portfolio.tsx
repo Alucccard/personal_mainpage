@@ -60,7 +60,7 @@ export const Portfolio: React.FC<{ title?: string }> = async ({
       link: "#",
     },
   ],
- */ title = "My Portfolio",
+ */ title = "My Web3 Portfolio",
 }) => {
   const items = await getPortfolios();
   return (
